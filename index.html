@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>University Marksheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+       background: #fffdef;
+      margin: 0;
+      padding: 20px;
+    }
+    
+
+   .marksheet {
+      width: 1000px;
+      margin: auto;
+      border: 2px solid #000;
+      padding: 10px 15px;
+      position: relative;
+      background: #fffdef;
+    }
+    .marksheet::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 350px;   /* logo size */
+      height: 350px;
+      background: url("c:/Users/SV/Desktop/logomsu.png") no-repeat center;
+      background-size: contain;
+      opacity: 0.12;   /* transparent watermark effect */
+      transform: translate(-50%, -50%);
+      z-index: 0;   /* stay at back */
+    }
+    .marksheet * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- HEADER + INFO ---------- */
+    .header-info {
+      border: 1px solid #000;
+      margin-bottom: 8px;
+       background: #fffdef;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #000;
+      padding: 6px;
+    }
+    .logo img {
+      width: 70px;
+    }
+    .university-name {
+      text-align: center;
+      flex: 1;
+    }
+    .university-name h2 {
+      margin: 1px 0;
+      font-size: 17px;
+    }
+    .university-name p {
+      margin: 1px 0;
+      font-size: 12px;
+    }
+    .university-name h3 {
+      margin: 2px 0;
+      font-size: 14px;
+    }
+    .photo img {
+      width: 85px;
+      height: 100px;
+      border: 1px solid #000;
+    }
+
+    /* ---------- INFO TABLE ---------- */
+    .info {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .info td {
+      border: 1px solid #000;
+      padding: 2px 6px;
+    }
+
+    /* ---------- MARKS TABLE ---------- */
+    .marks {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 11px;
+    }
+    .marks th, .marks td {
+      border: 1px solid #000;
+       border-right: 1px solid #000;
+        text-align: center;
+      padding: 6px 15px;
+      
+    }
+    .marks th {
+      background: #fffdef;
+  border-top: 1px solid #000;   /* header ku top border */
+  border-bottom: 2px solid #000;
+    }
+    .marks td {
+  border-top: none;
+  border-bottom: none;
+}
+.marks {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+      font-size: 11px;
+    }
+ 
+    .marks .end {
+  text-align: center;
+  font-weight: bold;
+  border-top: 2px solid #000;      /* Mela line */
+  border-bottom: 2px solid #000;   /* Keela closing line */
+}
+
+    /* ---------- FOOTER TABLE ---------- */
+    .footer-box {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+      font-size: 12px;
+    }
+    .footer-box th, .footer-box td {
+      border: 1px solid #000;
+      padding: 6px;
+      text-align: center;
+      background: #fffdef;
+    }
+
+    /* ---------- SIGNATURES ---------- */
+    .signatures {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .signatures div {
+     
+      text-align: center;
+      padding: 15px 8px;
+      font-size: 15px;
+       background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="marksheet">
+
+    <!-- HEADER -->
+    <div class="header-info">
+      <div class="header-row">
+        <div class="logo">
+          <img src="c:/Users/SV/Desktop/logomsu.png" alt="University Logo">
+        </div>
+        <div class="university-name">
+          <h2>மணோன்மணியம் சுந்தரனார் பல்கலைக்கழகம்</h2>
+          <h2>MANONMANIAM SUNDARANAR UNIVERSITY</h2>
+          <p>TIRUNELVELI - 627012, TAMIL NADU, INDIA</p>
+          <h3>STATEMENT OF MARKS WITH GRADE</h3>
+        </div>
+        <div class="photo">
+          <img src="image.png" alt="Student Photo">
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <table class="info">
+        <tr>
+          <td><b>SL.NO.</b> DPPG 241000421</td>
+          <td><b>PROGRAMME:</b> M.Sc. CYBER SECURITY</td>
+        </tr>
+        <tr>
+          <td><b>REGISTER NUMBER:</b> 20224012533114</td>
+          <td><b>GENDER:</b> FEMALE</td>
+          <td><b>SEMESTER:</b> I & II</td>
+          <td><b>MONTH & YEAR:</b> NOVEMBER 2022</td>
+        </tr>
+        <tr>
+          <td><b>NAME:</b> SINDHU C</td>
+          <td><b>MEDIUM:</b> ENGLISH</td>
+          <td><b>DOB:</b> 28/01/2002</td>
+          <td><b>DATE OF PUBLICATION:</b> 22/02/2023</td>
+        </tr>
+        <tr>
+          <td><b>FATHER'S NAME:</b> CHANDRA KUMAR M</td>
+          <td colspan="3"><b>MOTHER'S NAME:</b> ALAGU LAKSHIMI</td>
+        </tr>
+        <tr>
+          <td colspan="4"><b>COLLEGE NAME:</b> 401 - UNIVERSITY DEPARTMENT, MANONMANIAM SUNDARANAR UNIVERSITY</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- MARKS -->
+    <table class="marks">
+      <thead>
+        <tr>
+          <th rowspan="2">Sem</th>
+          <th rowspan="2">Sub.Code</th>
+          <th rowspan="2">Subject/Course</th>
+          <th colspan="3">Max Marks</th>
+          <th colspan="3">Marks Obtained</th>
+          <th rowspan="2">G</th>
+          <th rowspan="2">Grade Points</th>
+          <th rowspan="2">C</th>
+          <th rowspan="2">Credit Points</th>
+          <th rowspan="2">R</th>
+          <th rowspan="2">Month & Year</th>
+        </tr>
+        <tr>
+          <th>Int</th><th>Ext</th><th>Total</th>
+          <th>Int</th><th>Ext</th><th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>1</td>
+            <td>PCYC11</td>
+            <td>Foundations of Information Security</td><td>25</td><td>75</td>
+            <td>100</td>
+            <td>16</td>
+            <td>56</td><td>72</td>
+            <td>A+</td><td>7.20</td>
+            <td>4</td><td>28.80</td><td>P</td>
+            <td>N-22</td></tr>
+        <tr>
+            <td>1</td>
+            <td>PCYC12</td>
+            <td>Introduction to Computer Networking and Components</td>
+            <td>25</td><td>75</td><td>100</td>
+            <td>21</td><td>49</td><td>70</td><td>A+</td>
+            <td>7.00</td><td>4</td>
+            <td>28.00</td><td>P</td>
+            <td>N-22</td></tr>
+        <tr><td>1</td>
+            <td>PCYC13</td>
+            <td>Data Privacy and Cloud Security</td>
+            <td>25</td><td>75</td><td>100</td>
+            <td>20</td><td>42</td><td>62</td>
+            <td>A</td><td>6.20</td><td>4</td>
+            <td>24.80</td><td>P</td>
+            <td>N-22</td></tr>
+        <tr><td>1</td>
+            <td>PCYCPA</td>
+            <td>Cyber Criminology and Cyber Forensics (e-PGPathshala)</td><td>25</td>
+            <td>75</td><td>100</td><td>23</td><td>60</td>
+            <td>83</td><td>O</td>
+            <td>8.30</td><td>4</td>
+            <td>33.20</td><td>P</td><td>N-22</td></tr>
+        <tr><td>1</td>
+            <td>PCYEAC</td>
+            <td>Database Security</td>
+            <td>25</td><td>75</td><td>100</td>
+            <td>24</td><td>61</td><td>85</td>
+            <td>O</td><td>8.50</td><td>3</td>
+            <td>25.50</td><td>P</td><td>N-22</td></tr>
+        <tr><td>1</td>
+            <td>PCYL11</td>
+            <td>Information Security Laboratory</td>
+            <td>25</td><td>50</td>
+            <td>75</td><td>24</td>
+            <td>47</td><td>71</td><td>O</td>
+            <td>9.10</td><td>2</td>
+            <td>18.20</td><td>P</td>
+            <td>N-22</td></tr>
+        <tr><td>1</td>
+            <td>PCYC12</td>
+            <td>Lab - Networking & Security Tools</td>
+            <td>25</td>
+            <td>75</td><td>100</td>
+            <td>24</td><td>65</td><td>89</td><td>O</td>
+            <td>9.00</td><td>2</td><td>18.00</td>
+            <td>P</td><td>N-22</td></tr>
+        <tr><td>2</td>
+            <td>PCYC21</td>
+            <td>Cyber laws, Regulations and Frauds in BFSI Sector</td>
+            <td>25</td><td>75</td><td>100</td>
+            <td>23</td><td>65</td><td>88</td>
+            <td>O</td><td>8.80</td><td>2</td>
+            <td>17.60</td><td>P</td><td>N-22</td></tr>
+        <tr><td>2</td>
+            <td>PCYC22</td>
+            <td>Introduction to Digital Forensics</td><td>25</td><td>75</td>
+            <td>100</td><td>23</td><td>59</td>
+            <td>83</td><td>O</td><td>8.80</td>
+            <td>4</td><td>35.20</td><td>P</td>
+            <td>N-22</td></tr>
+        <tr><td>2</td>
+            <td>PCYC24</td>
+            <td>Intrusion Detection and Prevention System</td>
+            <td>25</td><td>75</td><td>100</td>
+            <td>23</td><td>60</td><td>83</td>
+            <td>O</td><td>8.80</td><td>4</td>
+            <td>35.20</td><td>P</td><td>N-22</td></tr>
+        <tr><td>2</td>
+            <td>PCYEBD</td>
+            <td>Internet of Things</td>
+            <td>25</td><td>75</td><td>100</td>
+            <td>23</td><td>46</td><td>69</td>
+            <td>B+</td><td>6.90</td><td>4</td>
+            <td>27.60</td><td>P</td>
+            <td>N-22</td></tr>
+        <tr>
+  <td colspan="15" class="end">~ END OF THE STATEMENT ~</td>
+   
+</tr>
+
+
+</tbody>
+</table>
+    <div style="height:100px;"></div> 
+  <div style="height:100px;"></div> 
+    <div style="height:100px;"></div> 
+  <div style="height:100px;"></div> 
+    <div style="height:100px;"></div> 
+  <div style="height:100px;"></div> 
+
+    <!-- FOOTER -->
+    <table class="footer-box">
+      <tr>
+        <th>Total Credits Earned</th>
+        <th>CGPA</th>
+        <th>CLASS / DIVISION</th>
+        <th>Minimum Credits</th>
+      </tr>
+      <tr>
+        <td><b>49</b></td>
+        <td><b>8.02</b></td>
+        <td>-</td>
+        <td><b>49</b></td>
+      </tr>
+
+    </table>
+    
+    <!-- SIGNATURES -->
+    <div class="signatures">
+      <div><b>Signature of the Candidate</b></div>
+      <div><b>Controller of Examinations</b><br>(Dr.G.Annadurai)</div>
+    </div>
+  </div>
+</body>
+</html>
